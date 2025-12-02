@@ -1,0 +1,17 @@
+# OS junk
+.DS_Store
+Thumbs.db
+.claude/
+
+# Editor settings
+.vscode/
+.idea/
+*.code-workspace
+
+# Python / Node / build outputs (if you add helper scripts later)
+__pycache__/
+.env
+venv/
+node_modules/
+dist/
+build/
