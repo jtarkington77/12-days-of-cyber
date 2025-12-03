@@ -2,7 +2,7 @@
 
 **12 days of challenges. 1 Christmas crisis. Can you help the elves save the holiday?**
 
-Welcome to the **North Pole Security Incident** - a holiday CTF series running from **December 12th through December 23rd, 2024**, with a special Christmas Eve bonus challenge on **December 24th**.
+Welcome to the **North Pole Security Incident** - a holiday CTF series running from **December 12th through December 23rd, 2025**, with a special Christmas Eve bonus challenge on **December 24th**.
 
 ## 🎅 The Story
 
@@ -95,7 +95,7 @@ Treat the flags as self-checks:
 
 If you're following along from Linkedin or other socials:
 - I'll post when the new day goes live.
--Please don't paste full flags publicly (avoid spoilers)
+- Please don't paste full flags publicly (avoid spoilers)
 - Comment something like "**Solved Day X**" and one thing you learned
 - If you really want confirmation, you can DM me your flag and I'll tell you if it's correct when I can.
 
@@ -110,7 +110,7 @@ You can do a lot of this with just a browser and a text editor, but the followin
 - **Hash cracking:** [John the Ripper](https://www.openwall.com/john/)
 - **Network analysis:** [Wireshark](https://www.wireshark.org/)
 - **HTML inspection:** [Browser DevTools](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools)
-- **Command line: (Linux/WSL or PowerShell):** For grepping and parsing logs
+- **Command line (Linux/WSL or PowerShell):** For grepping and parsing logs
 
 Use whatever fits your workflow. The focus is on the thinking, not the specific tools.
 
@@ -125,7 +125,7 @@ Use whatever fits your workflow. The focus is on the thinking, not the specific 
 - **Bonus Day (Dec 24):** Synthesis Challenge (Complete incident timeline, MITRE ATT&CK mapping)
 
 Each `dayxx/README.md` includes:
-- A story beat for the FrostNet incident
+- A story beat for the Jack Frost incident
 - The learning goal for that day
 - Your mission - exactly what to find or extract
 - A flag format reminder
