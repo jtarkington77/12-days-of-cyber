@@ -1,3 +1,5 @@
+![12 Days Of Cyber](Images/12-days-of-cyber.png)
+
 # 🎄 12 Days of Cyber – Saving Christmas at the North Pole ❄️
 
 **12 days of challenges. 1 Christmas crisis. Can you help the elves save the holiday?**
