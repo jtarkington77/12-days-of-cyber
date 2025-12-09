@@ -15,3 +15,17 @@ venv/
 node_modules/
 dist/
 build/
+
+# Sensitive files (DO NOT COMMIT TO PUBLIC REPO)
+FLAGS.md
+CREATE_ZIPS.md
+AI Instructions/
+DRAFT_ALTERNATE_STORY.md
+PROJECT_AUDIT_REPORT.md
+BEGINNER_ASSESSMENT*.md
+CHARACTER_REFERENCE.md
+
+# Extracted artifacts (testing only)
+day*/extracted*/
+day*/day*_artifacts/
+FLAGS.md

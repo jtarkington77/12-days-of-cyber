@@ -4,7 +4,7 @@
 
 **12 days of challenges. 1 Christmas crisis. Can you help the elves save the holiday?**
 
-Welcome to the **North Pole Security Incident** - a holiday CTF series running from **December 12th through December 23rd, 2025**, with a special Christmas Eve bonus challenge on **December 24th**.
+Welcome to the **North Pole Security Incident** - a holiday CTF series running from **December 12th through December 23rd, 2024**, with a special Christmas Eve bonus challenge on **December 24th**.
 
 ## 🎅 The Story
 
@@ -57,7 +57,7 @@ Each day's flag unlocks the next day's investigation files:
 - The password is always the previous day's flag (including `FROST{}`)
 
 **Example flow:**
-1. Solve **Day 1** → Find flag: `FROST{sl31gh_d@shb0@rd_pwn3d}`
+1. Solve **Day 1** → Find flag: `FROST{example_flag_here}`
 2. Go to `day02/` and extract `day02_artifacts.zip`
 3. Use the exact **Day 1 flag** as the password (case sensitive!)
 4. Solve Day 2 → Use that flag to unlock Day 3, and so on...
@@ -78,8 +78,10 @@ Across the 12 days, you'll help the elves by learning:
 - 💻 **Malware Analysis** - Deobfuscate malicious scripts left by Jack Frost
 - 🌐 **Web Security** - Analyze web server logs for reconnaissance
 - 📡 **Network Forensics** - Catch data exfiltration (Wireshark, PCAP analysis)
-- 🗄️ **Database Forensics** - Investigate Nice List database breaches
-- ☁️ **Cloud Security** - Find misconfigurations in North Pole Cloud infrastructure
+- 🗄️ **Database Security** - Investigate SQL injection attacks on the Nice List
+- 🔑 **API Security** - Detect leaked API keys and unauthorized access
+- 💾 **Windows Persistence** - Hunt malware persistence mechanisms
+- 🖼️ **Steganography** - Extract hidden data from image files
 - 🎯 **Incident Response** - Build the complete attack timeline and save Christmas!
 
 Each challenge builds on previous skills - by Day 12, you're using techniques from across the whole series!
@@ -103,27 +105,105 @@ If you're following along from Linkedin or other socials:
 
 ---
 
-## Tools you may want
+## 🛠️ Tools & Prerequisites
 
-You can do a lot of this with just a browser and a text editor, but the following can help:
+### Required for All Days
+These tools are essential and you'll use them throughout the challenges:
 
-- **Text editor:** [VSCode](https://code.visualstudio.com/)
-- **Encodings / transformations:** [CyberChef](https://gchq.github.io/CyberChef/)
-- **Hash cracking:** [John the Ripper](https://www.openwall.com/john/)
-- **Network analysis:** [Wireshark](https://www.wireshark.org/)
-- **HTML inspection:** [Browser DevTools](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools)
-- **Command line (Linux/WSL or PowerShell):** For grepping and parsing logs
+- **Text Editor** - [VSCode](https://code.visualstudio.com/), Notepad++, or any text editor
+- **Web Browser** - For accessing CyberChef and reading documentation
+- **ZIP Extraction Tool** - Built into most operating systems (for password-protected artifacts)
 
-Use whatever fits your workflow. The focus is on the thinking, not the specific tools.
+### Recommended Tools by Day
+
+Each day's README will remind you which tools you need, but here's the complete list so you can prepare:
+
+| Day | Tools Needed | When First Used |
+|-----|--------------|-----------------|
+| **Day 1** | [CyberChef](https://gchq.github.io/CyberChef/) (web-based, no install) | Decoding messages |
+| **Day 2** | [Hashcat](https://hashcat.net/hashcat/) OR [John the Ripper](https://www.openwall.com/john/) | Password cracking |
+| **Day 3** | Text editor with search, `grep` (Linux/WSL) or PowerShell | Log analysis |
+| **Day 4** | Python 3 (for running deobfuscation scripts) | JavaScript analysis |
+| **Day 5** | PowerShell (Windows) or `pwsh` (Linux/Mac) - [Install](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell) | Script analysis |
+| **Day 6** | Python 3, web browser | Web portal analysis |
+| **Day 7** | [Wireshark](https://www.wireshark.org/) OR `tshark`, Python 3 | PCAP network analysis |
+| **Day 8** | SQLite browser or `sqlite3` command-line tool | Database forensics |
+| **Day 9** | Web browser, `curl` or similar | API testing |
+| **Day 10** | Python 3, Windows OS (for registry/WMI/services) | Persistence hunting |
+| **Day 11** | [Steghide](http://steghide.sourceforge.net/), WSL (Windows users) | Steganography extraction |
+| **Day 12+** | Tools TBD - check each day's README | Advanced forensics |
+
+### Tool Installation Guides
+
+**CyberChef** (Day 1)
+- Web-based: https://gchq.github.io/CyberChef/
+- No installation required - just open in browser!
+
+**Hashcat** (Day 2)
+- Windows: Download from https://hashcat.net/hashcat/
+- Linux: `sudo apt install hashcat`
+- Mac: `brew install hashcat`
+- Alternative: John the Ripper (easier for beginners)
+
+**John the Ripper** (Day 2 - Alternative to Hashcat)
+- Windows/Mac/Linux: https://www.openwall.com/john/
+- Linux: `sudo apt install john`
+- Beginner-friendly option for password cracking
+
+**Wireshark** (Day 7)
+- Windows/Mac: Download from https://www.wireshark.org/
+- Linux: `sudo apt install wireshark`
+- Includes tshark (command-line version)
+- **First-time setup guide included in Day 7!**
+
+**PowerShell** (Day 5)
+- Windows: Already installed
+- Linux: https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-linux
+- Mac: https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-macos
+
+**Python 3** (Days 4, 6, 7, 10)
+- Windows: https://www.python.org/downloads/
+- Linux: `sudo apt install python3 python3-pip`
+- Mac: `brew install python3`
+
+**SQLite Tools** (Day 8)
+- Command-line: `sudo apt install sqlite3` (Linux) or included with Python
+- GUI Browser: https://sqlitebrowser.org/
+
+**Steghide** (Day 11)
+- Linux/WSL: `sudo apt install steghide`
+- Mac: `brew install steghide`
+- Windows: Use WSL (recommended) or download from http://steghide.sourceforge.net/
+
+**Command Line Tools**
+- Linux/Mac: `grep`, `awk`, `sed`, `cut` (usually pre-installed)
+- Windows: Use PowerShell OR install [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+### Important Notes
+
+- **No programming required!** - All challenges can be solved with the tools listed above
+- **First-time tool users welcome!** - Each day includes beginner guides when a new tool is introduced
+- **Alternative tools work!** - Use whatever you're comfortable with (e.g., Python instead of CyberChef, John instead of Hashcat)
+- **Web-based options available** - Many tasks can be done with just CyberChef and a text editor
+
+### Installation Verification
+
+Before Day 1, verify you can:
+1. Open a text file in your editor
+2. Extract a ZIP file (try the `day01_artifacts` folder)
+3. Access https://gchq.github.io/CyberChef/ in your browser
+
+For other tools, install them as you reach each day - you'll get specific setup instructions!
 
 ---
 
 ## Difficulty progression
 
 - **Days 1-3 (Dec 12-14):** Easy warm-up (encodings, hash cracking, log analysis)
-- **Days 4-6 (Dec 15-17):** Medium difficulty (phishing, script analysis, web logs)
-- **Days 7-9 (Dec 18-20):** Hard challenges (PCAP analysis, database forensics, API logs)
-- **Days 10-12 (Dec 21-23):** Very Hard (Windows forensics, cloud security, lateral movement)
+- **Days 4-6 (Dec 15-17):** Medium difficulty (JavaScript analysis, PowerShell deobfuscation, web analysis)
+- **Days 7-9 (Dec 18-20):** Medium-Hard (PCAP analysis, SQL injection, API security)
+- **Days 10-11 (Dec 21-22):** Hard (Windows persistence hunting, steganography)
+- **Day 12 (Dec 23):** Very Hard (Lateral movement, attack chain analysis)
 - **Bonus Day (Dec 24):** Synthesis Challenge (Complete incident timeline, MITRE ATT&CK mapping)
 
 Each `dayxx/README.md` includes:
@@ -152,7 +232,7 @@ Each `dayxx/README.md` includes:
 - [Day 8 (Dec 19) – Nice List Database Heist](./day08/) – Database forensics, SQL injection
 - [Day 9 (Dec 20) – Gift API Compromise](./day09/) – API security, leaked secrets
 - [Day 10 (Dec 21) – Persistent Frost Biters](./day10/) – Windows persistence mechanisms
-- [Day 11 (Dec 22) – North Pole Cloud Chaos](./day11/) – Cloud misconfigurations, S3 buckets
+- [Day 11 (Dec 22) – Hidden in Plain Sight](./day11/) – Steganography, extracting hidden data
 - [Day 12 (Dec 23) – Jack Frost's Path](./day12/) – Lateral movement, attack chain mapping
 
 ### 🎁 Christmas Eve Bonus (December 24)
