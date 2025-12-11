@@ -1,0 +1,69 @@
+North Pole Operations Center - System Notes
+============================================
+Last Updated: 2024-12-12T09:20:00Z
+Maintainer: Merry Tinselcode (Senior Security Elf)
+
+---
+
+RECENT SYSTEM CHANGES:
+======================
+
+2024-12-11 23:47:12 - Unauthorized dashboard API modification detected
+2024-12-11 23:47:45 - Unknown user accessed /api/v2/dashboard/update endpoint
+2024-12-11 23:48:03 - Modified status_message field with encoded data
+2024-12-11 23:48:15 - Connection terminated from external IP: 203.0.113.47
+
+---
+
+SECURITY ALERT:
+===============
+
+Someone accessed our Sleigh Dashboard API last night and left an encoded message.
+Whoever did this wanted us to find it - they're leaving a trail.
+
+I've been decoding the message... it references this file. They left something here.
+
+Below is a message I found embedded in a hidden comment in our dashboard logs:
+
+---
+
+CALLING CARD FROM THE ATTACKER:
+================================
+
+Ub ub ub! Zreel Puevfgznf sebz Wnpx Sebfg naq gur Sebfg Tvnagf!
+
+Jr'ir gnxra pbageby bs lbhe fyrtvtu qnfuobneq - whfg n yvggyr grfg bs jung jr pna qb.
+V'ir rapbqrq zl zrffntrf gjvpr gb xrrc lbh thrffvat. Qbhoyr gur sha, qbhoyr gur gehzoyr!
+Guvf vf bayl gur ortvaavat. Puevfgznf vf bhef gb ehva!
+
+Lbh'ir qrpbqrq nyy zl ynlref! Urer'f lbhe erjneq sbe orvat fb pyrire:
+
+SEBFG{q0hoy3_3ap0q3q_z3ff@t3f}
+
+Pna lbh fgbc hf orsber Puevfgznf Rir? Gur pyrpx vf gvpxvat...
+
+- Wnpx Sebfg
+
+---
+
+MERRY'S NOTES:
+==============
+
+This message is encoded with ROT13 - a simple substitution cipher.
+Each letter is shifted 13 positions in the alphabet (A→N, B→O, etc.)
+
+I need to decode this to see what Jack Frost is really saying!
+
+The flag is in there somewhere... once I decode it, I can prove we've uncovered
+the first part of this attack.
+
+---
+
+TO DO:
+- Decode the ROT13 message above
+- Extract the flag
+- Report findings to Dekker Frostbeard (SOC Manager)
+- Investigate how they got access to our dashboard API
+- Check for other compromised systems
+
+Time to dig deeper. Christmas depends on us! 🎄
