@@ -69,22 +69,23 @@ This creates a progression chain - you must solve each day to continue helping t
 
 ## 🛡️ Skills You'll Learn
 
-Across the 12 days, you'll help the elves by learning:
+Across the 12 days (+bonus), you'll help the elves by learning:
 
-- 🔤 **Encoding & Decoding** - Uncover hidden messages (base64, hex, ROT13)
-- 🔐 **Password Cracking** - Recover compromised elf accounts (hashcat, custom wordlists)
-- 📋 **Log Analysis** - Track down attackers in system logs (PowerShell, pattern recognition)
-- 📧 **Phishing Detection** - Identify fake "Toy Recall" emails targeting elves
-- 💻 **Malware Analysis** - Deobfuscate malicious scripts left by Jack Frost
-- 🌐 **Web Security** - Analyze web server logs for reconnaissance
-- 📡 **Network Forensics** - Catch data exfiltration (Wireshark, PCAP analysis)
-- 🗄️ **Database Security** - Investigate SQL injection attacks on the Nice List
-- 🔑 **API Security** - Detect leaked API keys and unauthorized access
-- 💾 **Windows Persistence** - Hunt malware persistence mechanisms
-- 🖼️ **Steganography** - Extract hidden data from image files
+- 🔤 **Encoding & Decoding** - Uncover hidden messages (Base64, Hex, Binary, Base32, ROT13)
+- 🔐 **Password Cracking** - Recover compromised elf accounts (Hashcat/John, custom wordlists)
+- 📋 **Log Analysis** - Track down attackers in authentication logs
+- 💻 **JavaScript Deobfuscation** - Analyze malicious phishing scripts
+- 🔧 **PowerShell Malware** - Deobfuscate malicious PowerShell scripts
+- 🌐 **Web Reconnaissance** - Use Gobuster for directory enumeration
+- 📡 **Network Forensics** - Analyze DNS tunneling attacks (Wireshark, PCAP analysis)
+- 🗄️ **SQL Injection** - Hands-on exploitation of vulnerable web applications
+- 🔑 **API Security** - Detect leaked secrets and authorization bypass vulnerabilities
+- 💾 **Windows Persistence** - Hunt Registry, Scheduled Tasks, WMI, and Service persistence
+- 🖼️ **Steganography** - Extract hidden data from image files with steghide
+- 📄 **PDF Malware Analysis** - Static analysis of weaponized documents
 - 🎯 **Incident Response** - Build the complete attack timeline and save Christmas!
 
-Each challenge builds on previous skills - by Day 12, you're using techniques from across the whole series!
+Each challenge builds on previous skills - by Day 13, you're combining techniques from ALL previous days!
 
 ---
 
@@ -118,20 +119,21 @@ These tools are essential and you'll use them throughout the challenges:
 
 Each day's README will remind you which tools you need, but here's the complete list so you can prepare:
 
-| Day | Tools Needed | When First Used |
-|-----|--------------|-----------------|
-| **Day 1** | [CyberChef](https://gchq.github.io/CyberChef/) (web-based, no install) | Decoding messages |
-| **Day 2** | [Hashcat](https://hashcat.net/hashcat/) OR [John the Ripper](https://www.openwall.com/john/) | Password cracking |
-| **Day 3** | Text editor with search, `grep` (Linux/WSL) or PowerShell | Log analysis |
-| **Day 4** | Python 3 (for running deobfuscation scripts) | JavaScript analysis |
-| **Day 5** | PowerShell (Windows) or `pwsh` (Linux/Mac) - [Install](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell) | Script analysis |
-| **Day 6** | Python 3, web browser | Web portal analysis |
-| **Day 7** | [Wireshark](https://www.wireshark.org/) OR `tshark`, Python 3 | PCAP network analysis |
-| **Day 8** | SQLite browser or `sqlite3` command-line tool | Database forensics |
-| **Day 9** | Web browser, `curl` or similar | API testing |
-| **Day 10** | Python 3, Windows OS (for registry/WMI/services) | Persistence hunting |
+| Day | Tools Needed | Challenge Type |
+|-----|--------------|----------------|
+| **Day 1** | [CyberChef](https://gchq.github.io/CyberChef/) (web-based, no install) | Multi-layer encoding (Base64, Hex, Binary) |
+| **Day 2** | [Hashcat](https://hashcat.net/hashcat/) OR [John the Ripper](https://www.openwall.com/john/) | Password hash cracking (MD5) |
+| **Day 3** | Text editor with search, `grep` or PowerShell | Log analysis, brute force detection |
+| **Day 4** | Python 3, CyberChef | JavaScript deobfuscation |
+| **Day 5** | PowerShell (Windows) or `pwsh` (Linux/Mac) | PowerShell malware analysis |
+| **Day 6** | Python 3, Flask, [Gobuster](https://github.com/OJ/gobuster) | Web reconnaissance, directory enumeration |
+| **Day 7** | [Wireshark](https://www.wireshark.org/) OR `tshark` OR Python 3 | DNS tunneling, PCAP analysis |
+| **Day 8** | Python 3, Flask, web browser | SQL injection exploitation |
+| **Day 9** | Python 3, Flask, `curl` or PowerShell | API security, secret scanning, authorization bypass |
+| **Day 10** | Python 3, Windows OS | Windows persistence hunting (Registry, Tasks, WMI, Services) |
 | **Day 11** | [Steghide](http://steghide.sourceforge.net/), WSL (Windows users) | Steganography extraction |
-| **Day 12+** | Tools TBD - check each day's README | Advanced forensics |
+| **Day 12** | Python 3, PDF analysis tools (pdfid, pdf-parser) | PDF malware analysis |
+| **Day 13** | All previous tools | Multi-layer final challenge (steganography, hash cracking, XOR, SQL, JS deobfuscation, ROT13) |
 
 ### Tool Installation Guides
 
@@ -166,9 +168,19 @@ Each day's README will remind you which tools you need, but here's the complete 
 - Linux: `sudo apt install python3 python3-pip`
 - Mac: `brew install python3`
 
-**SQLite Tools** (Day 8)
-- Command-line: `sudo apt install sqlite3` (Linux) or included with Python
-- GUI Browser: https://sqlitebrowser.org/
+**Flask** (Days 6, 8, 9)
+- Install via pip: `pip install flask` or `pip3 install flask`
+- Used for running local vulnerable web applications
+
+**Gobuster** (Day 6)
+- Linux: `sudo apt install gobuster`
+- Mac: `brew install gobuster`
+- Windows: Download from https://github.com/OJ/gobuster/releases
+
+**PDF Analysis Tools** (Day 12)
+- Download directly from https://github.com/DidierStevens/DidierStevensSuite
+- `pdfid.py` - Identifies suspicious PDF elements
+- `pdf-parser.py` - Extracts and analyzes PDF objects
 
 **Steghide** (Day 11)
 - Linux/WSL: `sudo apt install steghide`
@@ -199,12 +211,12 @@ For other tools, install them as you reach each day - you'll get specific setup 
 
 ## Difficulty progression
 
-- **Days 1-3 (Dec 12-14):** Easy warm-up (encodings, hash cracking, log analysis)
-- **Days 4-6 (Dec 15-17):** Medium difficulty (JavaScript analysis, PowerShell deobfuscation, web analysis)
-- **Days 7-9 (Dec 18-20):** Medium-Hard (PCAP analysis, SQL injection, API security)
+- **Days 1-3 (Dec 12-14):** Easy warm-up (multi-layer encoding, hash cracking, log analysis)
+- **Days 4-6 (Dec 15-17):** Medium difficulty (JavaScript deobfuscation, PowerShell malware, web reconnaissance)
+- **Days 7-9 (Dec 18-20):** Medium-Hard (DNS tunneling/PCAP, SQL injection, API security)
 - **Days 10-11 (Dec 21-22):** Hard (Windows persistence hunting, steganography)
-- **Day 12 (Dec 23):** Very Hard (Lateral movement, attack chain analysis)
-- **Bonus Day (Dec 24):** Synthesis Challenge (Complete incident timeline, MITRE ATT&CK mapping)
+- **Day 12 (Dec 23):** Hard (PDF malware analysis)
+- **Bonus Day 13 (Dec 24):** Expert (Multi-layer final challenge using ALL previous skills)
 
 Each `dayxx/README.md` includes:
 - A story beat for the Jack Frost incident
@@ -220,20 +232,20 @@ Each `dayxx/README.md` includes:
 ### 🎄 The 12 Days (December 12-23)
 
 **Week 1: Discovery - Something's Wrong at the North Pole!**
-- [Day 1 (Dec 12) – Sleigh Dashboard Sabotage](./day01/) – Encoded messages, multi-layer decoding
-- [Day 2 (Dec 13) – Nice List Backup Breach](./day02/) – Password hash cracking, elf account recovery
+- [Day 1 (Dec 12) – Sleigh Dashboard Sabotage](./day01/) – Multi-layer encoding (Base64 → Hex → Binary)
+- [Day 2 (Dec 13) – Nice List Backup Breach](./day02/) – Password hash cracking (MD5 with custom wordlist)
 - [Day 3 (Dec 14) – Workshop Portal Attack](./day03/) – Log analysis, brute force detection
-- [Day 4 (Dec 15) – Phishing the Elves](./day04/) – Email analysis, fake toy recalls
-- [Day 5 (Dec 16) – Malicious Toy Scripts](./day05/) – PowerShell deobfuscation, malware analysis
-- [Day 6 (Dec 17) – Reindeer Stable Reconnaissance](./day06/) – Web server log analysis
-- [Day 7 (Dec 18) – Stealing the Nice List](./day07/) – Network forensics, data exfiltration
+- [Day 4 (Dec 15) – Phishing the Elves](./day04/) – JavaScript deobfuscation, phishing analysis
+- [Day 5 (Dec 16) – Malicious Toy Scripts](./day05/) – PowerShell malware deobfuscation
+- [Day 6 (Dec 17) – Reindeer Stable Reconnaissance](./day06/) – Web reconnaissance with Gobuster, robots.txt analysis
+- [Day 7 (Dec 18) – Stealing the Nice List](./day07/) – DNS tunneling, PCAP analysis, Base32 decoding
 
 **Week 2: Deep Investigation - The Plot Thickens!**
-- [Day 8 (Dec 19) – Nice List Database Heist](./day08/) – Database forensics, SQL injection
-- [Day 9 (Dec 20) – Gift API Compromise](./day09/) – API security, leaked secrets
-- [Day 10 (Dec 21) – Persistent Frost Biters](./day10/) – Windows persistence mechanisms
-- [Day 11 (Dec 22) – Hidden in Plain Sight](./day11/) – Steganography, extracting hidden data
-- [Day 12 (Dec 23) – Jack Frost's Path](./day12/) – Lateral movement, attack chain mapping
+- [Day 8 (Dec 19) – Nice List Database Heist](./day08/) – Hands-on SQL injection exploitation
+- [Day 9 (Dec 20) – The GitHub Secret Leak](./day09/) – Secret scanning, API authorization bypass
+- [Day 10 (Dec 21) – Persistent Frost Biters](./day10/) – Windows persistence hunting (Registry, Tasks, WMI, Services)
+- [Day 11 (Dec 22) – Hidden in Plain Sight](./day11/) – Steganography extraction with steghide
+- [Day 12 (Dec 23) – The Final Payload](./day12/) – PDF malware static analysis
 
 ### 🎁 Christmas Eve Bonus (December 24)
-- [Bonus Day (Dec 24) – Saving Christmas!](./day13/) – Complete incident response, timeline synthesis, final report
+- [Day 13 (Dec 24) – Operation Blizzard: The Final Payload](./day13/) – Expert multi-layer challenge (7+ layers using ALL previous skills)
