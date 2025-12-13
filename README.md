@@ -116,7 +116,7 @@ These tools are essential and you'll use them throughout the challenges:
 
 - **Text Editor** - [VSCode](https://code.visualstudio.com/), Notepad++, or any text editor
 - **Web Browser** - For accessing CyberChef and reading documentation
-- **ZIP Extraction Tool** - Built into most operating systems (for password-protected artifacts)
+- **7-Zip** - For extracting password-protected artifacts ([Download](https://www.7-zip.org/))
 
 ### Recommended Tools by Day
 
