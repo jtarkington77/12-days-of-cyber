@@ -4,7 +4,10 @@
 
 **12 days of challenges. 1 Christmas crisis. Can you help the elves save the holiday?**
 
-Welcome to the **North Pole Security Incident** - a holiday CTF series running from **December 12th through December 23rd, 2024**, with a special Christmas Eve bonus challenge on **December 24th**.
+Welcome to the **North Pole Security Incident** - a holiday CTF series with 12 challenges plus a Christmas Eve bonus.
+
+> **📁 Case File: NPOC-2024-FROST**
+> *The following incident occurred during December 2024 at the North Pole Operations Center. These training scenarios are based on the actual attack timeline, artifacts, and investigation that took place. All flags and evidence reflect the original incident.*
 
 ## 🎅 The Story
 
